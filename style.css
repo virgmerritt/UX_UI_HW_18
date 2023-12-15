@@ -135,16 +135,19 @@ nav > a:not(:first-of-type) {
 
 /* Case Study Card Section */
 
-.container {
+.container1 .container2 {
+    display: flex;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
     gap: 20px;
-    justify-content: center;
+    width: 100%
   }
   
   .card {
     text-align: center;
     padding: 10px;
+    width: 33%
   }
   
   .card h1 {
@@ -194,7 +197,7 @@ nav > a:not(:first-of-type) {
     transform: translateY(35%);
   }
   
-  #BCKUnited, #Carry-on, #Edgov {
+  #BCKUnited, #Carry-on, #Edgov, #hikingApp, #DVApp, #Portfolio {
     width: 430px;
     height: 500px;
     flex-shrink: 0;
@@ -212,6 +215,17 @@ nav > a:not(:first-of-type) {
     background: linear-gradient(180deg, #EDEDED 0%, #F9F9F9 41.4%);
   }
 
+  #HikingApp {
+    background: #F9F9F9;
+  }
+  
+  #DVApp{
+    background: linear-gradient(180deg, #EDEDED 0%, #F9F9F9 41.4%);
+  }
+  
+  #Portfolio {
+    background: #F9F9F9;
+  }
 /* BCK Highlight Section */
 
 #BCKHighlight {
@@ -308,7 +322,7 @@ nav > a:not(:first-of-type) {
     margin: 0;
   }
 
-/* Grid Gallery Section */
+/* Grid Gallery Section Constructed using CSS Flex */   
 
 #categoryGrid {
     margin: 0px 10%;
@@ -412,4 +426,41 @@ nav > a:not(:first-of-type) {
         font-weight: 800;
         line-height: normal;
         text-decoration: none;
+      }
+
+      @media only screen and (max-width: 600) {
+
+        .container1 .container2 {
+          display: flex;
+          display: grid;
+          flex-direction: column;
+          justify-content: center;
+          grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+          grid-area: repeat(auto-fit, minmax(430px, 1fr));
+          grid-row: repeat(auto-fit, minmax(430px, 1fr));
+          gap: 20px;
+          width: 100%;
+        }
+      
+        #categoryGrid {
+          margin: 0px 10%;
+          display: grid;
+          padding: 4px;
+          grid-template-rows: 300px 300px 300px;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-areas:  
+              "edGov edGov typesetting wireframe wireframe"
+              "edGov edGov sign deboss deboss"
+              "letterpress letterpress BCKiphone deboss deboss";
+        }
+      
+        .categoryGridArea {
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin: 5px;
+          cursor: pointer;
+          display: grid;
+          align-content: end;
+        }
       }
